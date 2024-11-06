@@ -5,6 +5,8 @@ const { validateJWT } = require('../middleware/validateJWT');
 const { check } = require('express-validator');
 const router = Router();
 
+
+
 // Routes
 // Login a user
 router.post('/login', [
