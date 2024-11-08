@@ -10,6 +10,11 @@ router.use(validateJWT);
 /**
  * @swagger
  * components:
+ *  securitySchemes:
+ *    bearerAuth:
+ *      type: http
+ *      scheme: bearer
+ *      bearerFormat: JWT
  *  schemas:
  *    User:
  *     type: object
@@ -50,8 +55,8 @@ router.use(validateJWT);
  *   get:
  *     summary: Lists all the users
  *     tags: [Users]
- *     headers:
- *       x-token: 
+ *     security:
+ *       - bearerAuth: [ ]
  *     responses:
  *       200:
  *         description: The list of the users
@@ -65,6 +70,8 @@ router.use(validateJWT);
  *   get:
  *     summary: Lists all ACTIVE users
  *     tags: [Users]
+ *     security:
+ *      - bearerAuth: []
  *     responses:
  *       200:
  *         description: The list of the users that are active
@@ -77,19 +84,21 @@ router.use(validateJWT);
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
+ *     security:
+ *     - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/Book'
+ *             $ref: '#/components/schemas/User'
  *     responses:
  *       200:
- *         description: The created book.
+ *         description: The created user.
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Book'
+ *               $ref: '#/components/schemas/User'
  *       500:
  *         description: Some server error
  * 
@@ -97,6 +106,8 @@ router.use(validateJWT);
  *   get:
  *     summary: Get a user by id
  *     tags: [Users]
+ *     security:
+ *     - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -107,7 +118,7 @@ router.use(validateJWT);
  *     responses:
  *       200:
  *         description: The user response by id
- *         contens:
+ *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/User'
@@ -118,6 +129,8 @@ router.use(validateJWT);
  *   put:
  *    summary: Update a user by the id
  *    tags: [Users]
+ *    security:
+ *     - bearerAuth: []
  *    parameters:
  *      - in: path
  *        name: id
@@ -145,6 +158,8 @@ router.use(validateJWT);
  *   delete:
  *     summary: Soft remove the user by id
  *     tags: [Users]
+ *     security:
+ *      - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -158,6 +173,8 @@ router.use(validateJWT);
  *         description: The user was deleted
  *       404:
  *         description: The user was not found
+ *       500:
+ *         description: Some error happened
  */
 
 // Routes
