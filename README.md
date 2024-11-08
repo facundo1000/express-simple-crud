@@ -6,4 +6,4 @@
 - Bcrypt: para la encriptacion de las claves. `pnpm add bcryptjs -D`
 
 ### Documentation
-[Documentation](http://localhost:400/api-docs)
+[Documentation](https://express-simple-crud-production.up.railway.app/api-docs/)
