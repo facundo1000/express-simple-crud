@@ -141,7 +141,7 @@ const router = Router();
  *   summary: Renew a token
  *   tags: [Auth]
  *   security:
- *     - Authorization: []
+ *     - xTokenAuth: []
  *   responses:
  *     200:
  *       description: The token has been renewed successfully

@@ -11,10 +11,10 @@ router.use(validateJWT);
  * @swagger
  * components:
  *  securitySchemes:
- *    Authorization:
- *      type: http
- *      scheme: bearer
- *      bearerFormat: JWT
+ *    xTokenAuth:
+ *      type: apiKey
+ *      in: header
+ *      name: x-token
  *  schemas:
  *    User:
  *     type: object
@@ -56,7 +56,7 @@ router.use(validateJWT);
  *     summary: Lists all the users
  *     tags: [Users]
  *     security:
- *       - Authorization: []
+ *       - xTokenAuth: []
  *     responses:
  *       200:
  *         description: The list of the users
@@ -71,7 +71,7 @@ router.use(validateJWT);
  *     summary: Lists all ACTIVE users
  *     tags: [Users]
  *     security:
- *       - Authorization: []
+ *       - xTokenAuth: []
  *     responses:
  *       200:
  *         description: The list of the users that are active
@@ -85,7 +85,7 @@ router.use(validateJWT);
  *     summary: Create a new user
  *     tags: [Users]
  *     security:
- *      - Authorization: []
+ *      - xTokenAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -107,7 +107,7 @@ router.use(validateJWT);
  *     summary: Get a user by id
  *     tags: [Users]
  *     security:
- *       - Authorization: []
+ *       - xTokenAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -130,7 +130,7 @@ router.use(validateJWT);
  *    summary: Update a user by the id
  *    tags: [Users]
  *    security:
- *      - Authorization: []
+ *      - xTokenAuth: []
  *    parameters:
  *      - in: path
  *        name: id
@@ -159,7 +159,7 @@ router.use(validateJWT);
  *     summary: Soft remove the user by id
  *     tags: [Users]
  *     security:
- *       - Authorization: []
+ *       - xTokenAuth: []
  *     parameters:
  *       - in: path
  *         name: id

@@ -18,14 +18,24 @@ const options = {
         },
         components: {
             securitySchemes: {
-                Authorization: {
+                bearerAuth: {
                     type: "http",
                     scheme: "bearer",
                     bearerFormat: "JWT",
                     value: "Bearer <JWT token here>"
                 },
+                xTokenAuth: {
+                    type: "apiKey",
+                    in: "header",
+                    name: "x-token",
+                },
             },
         },
+        security: [
+            {
+                xTokenAuth: [],
+            },
+        ],
         servers: [
             {
                 url: "https://express-simple-crud.onrender.com",
