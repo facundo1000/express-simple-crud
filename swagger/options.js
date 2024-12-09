@@ -16,11 +16,22 @@ const options = {
                 email: "info@email.com",
             },
         },
+        components: {
+            securitySchemes: {
+                bearerAuth: {
+                    type: "http",
+                    scheme: "bearer",
+                    bearerFormat: "JWT",
+                    value: "Bearer <JWT token here>"
+                },
+            },
+        },
         servers: [
             {
                 url: "https://express-simple-crud.onrender.com",
             },
         ],
+
     },
     apis: ["./routes/*.js"],
 };
