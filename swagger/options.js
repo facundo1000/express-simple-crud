@@ -20,12 +20,6 @@ const options = {
         },
         components: {
             securitySchemes: {
-                // bearerAuth: {
-                //     type: "http",
-                //     scheme: "bearer",
-                //     bearerFormat: "JWT",
-                //     value: "Bearer <JWT token here>"
-                // },
                 xTokenAuth: {
                     type: "JWT token",
                     in: "header",
