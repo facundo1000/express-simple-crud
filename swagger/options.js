@@ -5,7 +5,9 @@ const options = {
             title: "Crud Express API with Swagger",
             version: "0.1.0",
             description:
-                "This is a simple CRUD API application made with Express and documented with Swagger",
+                "This is a simple CRUD API application made with Express and documented with Swagger \n" +
+                "1- Register a new user or login to create a token \n" +
+                "2- Use the token to access the users' list or any other endpoint \n",
             license: {
                 name: "MIT",
                 url: "https://spdx.org/licenses/MIT.html",
@@ -18,16 +20,18 @@ const options = {
         },
         components: {
             securitySchemes: {
-                bearerAuth: {
-                    type: "http",
-                    scheme: "bearer",
-                    bearerFormat: "JWT",
-                    value: "Bearer <JWT token here>"
-                },
+                // bearerAuth: {
+                //     type: "http",
+                //     scheme: "bearer",
+                //     bearerFormat: "JWT",
+                //     value: "Bearer <JWT token here>"
+                // },
                 xTokenAuth: {
                     type: "apiKey",
                     in: "header",
                     name: "x-token",
+                    scheme: "bearer",
+                    bearerFormat: "JWT",
                 },
             },
         },
