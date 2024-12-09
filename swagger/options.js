@@ -27,11 +27,12 @@ const options = {
                 //     value: "Bearer <JWT token here>"
                 // },
                 xTokenAuth: {
-                    type: "apiKey",
+                    type: "JWT token",
                     in: "header",
                     name: "x-token",
                     scheme: "bearer",
                     bearerFormat: "JWT",
+                    value: "Bearer <JWT token here>"
                 },
             },
         },
