@@ -11,7 +11,7 @@ router.use(validateJWT);
  * @swagger
  * components:
  *  securitySchemes:
- *    bearerAuth:
+ *    Authorization:
  *      type: http
  *      scheme: bearer
  *      bearerFormat: JWT
@@ -56,7 +56,7 @@ router.use(validateJWT);
  *     summary: Lists all the users
  *     tags: [Users]
  *     security:
- *       - bearerAuth: [ ]
+ *       - Authorization: []
  *     responses:
  *       200:
  *         description: The list of the users
@@ -71,7 +71,7 @@ router.use(validateJWT);
  *     summary: Lists all ACTIVE users
  *     tags: [Users]
  *     security:
- *      - bearerAuth: []
+ *       - Authorization: []
  *     responses:
  *       200:
  *         description: The list of the users that are active
@@ -85,7 +85,7 @@ router.use(validateJWT);
  *     summary: Create a new user
  *     tags: [Users]
  *     security:
- *     - bearerAuth: []
+ *      - Authorization: []
  *     requestBody:
  *       required: true
  *       content:
@@ -107,7 +107,7 @@ router.use(validateJWT);
  *     summary: Get a user by id
  *     tags: [Users]
  *     security:
- *     - bearerAuth: []
+ *       - Authorization: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -130,7 +130,7 @@ router.use(validateJWT);
  *    summary: Update a user by the id
  *    tags: [Users]
  *    security:
- *     - bearerAuth: []
+ *      - Authorization: []
  *    parameters:
  *      - in: path
  *        name: id
@@ -159,7 +159,7 @@ router.use(validateJWT);
  *     summary: Soft remove the user by id
  *     tags: [Users]
  *     security:
- *      - bearerAuth: []
+ *       - Authorization: []
  *     parameters:
  *       - in: path
  *         name: id
