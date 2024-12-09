@@ -15,7 +15,7 @@ app.use(express.static('public'));
 
 const swaggerSpec = swaggerJSDoc(options);
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, { explorer: true }));
 
 app.use('/api/users', require('./routes/usersRoutes'));
 app.use('/api/auth', require('./routes/authRoutes'));
